@@ -43,28 +43,21 @@ int main(int argc, char **argv,char **envp)
 ////////////////////////////////////////
 // TESTING AREA ///////////////////////
 ///////////////////////////////////////
-printf("");
+printf("Automated Testing");
 printFormatter("Hello my dog's name is Darwin.");
 printFormatter("   Hello  World!   ");
 printFormatter("");
 printFormatter("      ");
 printFormatter(" HelloWorld");
 
-
-
-
   do {
     write(1,"$ ",2);
     input = getInput();
     tokens = tokenize(input);
-printf("tokens are:\n");
-printAll(tokens);
-        continuation=compare(tokens[0],"exit\0");
+    printf("tokens are:\n");
+    printAll(tokens);
+    continuation=compare(tokens[0],"exit\0"); 
   } while (continuation);
-
-
-
-
   return EXIT_SUCCESS;
 }
 

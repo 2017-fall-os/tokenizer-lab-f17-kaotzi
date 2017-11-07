@@ -78,8 +78,6 @@ int letterCount(char *input){
 	return count;
 }
 
-
-
 ///////////////////////////////
 /////////helper class/////////
 char **mytok(char * input, char delim)
@@ -89,10 +87,6 @@ char **mytok(char * input, char delim)
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////  TOKEN PART/////////////////////////////////////////////////////////////////////////
-
-
-
-
 char **tokenize(char * input)
 {
   int words = wordCount1(input);
@@ -131,12 +125,17 @@ toks[words]= end;
 return toks;
 
 }
+//clear command
+int makeFree(char **input){
+ 	int index =0;
+	while(*input[index]!='\0')
+	{
+		free(input[index]);
+		index++;
+    	}
+	free(input);
+}
 
-
-
-
-
-//simple print command to get a full string printed to the screen
 int printAll(char **input){
  	int index =0;
 	fflush(stdout);
