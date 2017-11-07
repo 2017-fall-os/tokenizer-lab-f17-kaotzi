@@ -82,7 +82,7 @@ int letterCount(char *input){
 
 ///////////////////////////////
 /////////helper class/////////
-char **delimTok(char * input, char delim)
+char **mytok(char * input, char delim)
 {
   delimit = delim;
   return tokenize(input);
@@ -134,26 +134,28 @@ return toks;
 
 
 
+
+
 //simple print command to get a full string printed to the screen
 int printAll(char **input){
  	int index =0;
-	//printf("\nyour table prints this: \n");fflush(stdout);
-//printf(input[index]);fflush(stdout);
-printf("\nyour table prints this: \n");fflush(stdout);
+	fflush(stdout);
+	if(*input[0]=='\0'){
+		printf("(empty)\n");
+	}
 	while(*input[index]!='\0')
 	{
-
-	//printf("\ntable.........: ");fflush(stdout);
 		printIt(input[index]);
 		index++;
     	}
-	//printf("this can be reached\n");
 }
 
 
 //compare method
 int compare(char* word1, char* word2){
 int wordLength = letterCount(word1); 
+if(wordCount1(word1)!= wordCount1(word2))
+    return -1;
 for(int i=0;i<wordLength;i++){
 	if(word2[i]=='\0')
 		return -1;
